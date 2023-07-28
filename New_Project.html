@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Project</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+
+    <section class="container-fluid">
+        <div class="container header">
+            <h1>Movie</h1>
+            <button onclick="openAddMovieModal()"> Create the Movie </button>
+        </div>
+    </section>
+
+    <section class="container_fluid">
+        <div class="container table_container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Title</td>
+                        <td>Release Date</td>
+                        <td>Genres</td>
+                        <td>Duration</td>
+                        <td>IMDB Rating</td>
+                        <td>Actions</td>
+
+                    </tr>
+                </thead>
+                <tbody id="movie_data">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- add movie section -->
+
+    <div class="vew-modal" id="addmodal">
+        <div class="viw-modal-container">
+
+            <div class="close-modal">
+                <i class="fa-solid fa-xmark" onclick="closeModal('addmodal')"></i>
+            </div>
+
+            <div class="movie_details" style="flex-direction: column;">
+
+                <h1>ADD NEW MOVIE</h1>
+
+                <form class="movie_input" id="addMovieFormID">
+                    <input type="text" placeholder="Enter Title" id="addMovieTitle" required>
+                    <input type="text" placeholder="Enter Generes by , sperated" id="addMovieGenres" required>
+                    <input type="text" placeholder="Enter Actors" id="addMovieActors" required>
+                    <input type="text" placeholder="Enter ReleaseDate" id="add_releasdate" onfocus="changetextTodate()">
+                    <input type="text" placeholder="Enter Duration" id="addMovieDuration" required>
+                    <input type="text" placeholder="Enter IMDB" id="addMovieIMDBRating" required>
+                    <input type="url" placeholder="Enter poster URL" id="addMoviePosterURL" class="movie_inp_bg"required>
+                    <TExtarea id="addMovieStoryline" cols="30" rows="4" class="movie_inp_bg"  placeholder="Enter Storyline" required></TExtarea>
+                    <button type="button" onclick="createMovie()">ADD MOVIE</button>
+
+
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- view  movie_model -->
+
+    <div class="vew-modal" id="viewmodal">
+        <div class="viw-modal-container">
+
+            <div class="close-modal">
+                <i class="fa-solid fa-xmark" onclick="closeModal('viewmodal')"></i>
+            </div>
+
+            <div class="movie_details">
+                <div class="movie_poster">
+                    <div class="poster-url">
+                        <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTc3OTE1MDAxNV5BMl5BanBnXkFtZTgwNjM1NDk5NTE@._V1_SY250_CR0,0,187,250_AL_.jpg"
+                            id="movie_img">
+                    </div>
+                    <div class="generes" id="movie_generes">
+
+                    </div>
+                </div>
+
+                <div class="movie_info">
+                    <h1 id="movie_name"></h1>
+                    <div>
+
+                        <h3>Story Line</h3>
+                        <p id="movie_storyline"> </p>
+                    </div>
+                    <div>
+                        <h3>Actors</h3>
+                        <p id="movie_actors"></p>
+                    </div>
+
+                    <div>
+                        <h3>Releas Date</h3>
+                        <p id="movie_releaseDate"></p>
+                    </div>
+                    <div>
+                        <h3>Duration</h3>
+                        <p id="movie_duration"></p>
+                    </div>
+                    <div>
+                        <h3>Rating</h3>
+                        <div class="ratings">
+                            <div>
+                                <h4>IMDB</h4>
+                                <p id="movie_imdb"></p>
+                            </div>
+
+                            <div>
+                                <h4>Average</h4>
+                                <p> 7.8</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="./js/main.js"></script>
+    <!-- <script src="./js/store.js"></script> -->
+
+</body>
+
+</html>
